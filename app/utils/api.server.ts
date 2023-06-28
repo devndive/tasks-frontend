@@ -1,6 +1,6 @@
 import { Task, ApiTask, ApiTaskSingleResponse, ApiTasksListResponse } from "./types";
 
-const API_SERVER_URL = "http://127.0.0.1:8000/api/tasks";
+const API_SERVER_URL = `${process.env.API_SERVER_ADDRESS}/api/tasks`;
 
 function mapApiTaskToTask(apiTask: ApiTask): Task {
   return {

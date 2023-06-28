@@ -18,11 +18,12 @@
     "date-fns": "^2.30.0",
     "isbot": "^3.6.8",
     "react": "^18.2.0",
+    "msw": "^1.2.2",
+    "@faker-js/faker": "^8.0.2",
+    "@jackfranklin/test-data-bot": "^2.1.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@faker-js/faker": "^8.0.2",
-    "@jackfranklin/test-data-bot": "^2.1.0",
     "@playwright/test": "^1.35.1",
     "@remix-run/dev": "^1.17.1",
     "@remix-run/eslint-config": "^1.17.1",
@@ -31,7 +32,6 @@
     "@vitejs/plugin-react": "^4.0.1",
     "eslint": "^8.38.0",
     "jsdom": "^22.1.0",
-    "msw": "^1.2.2",
     "typescript": "^5.0.4",
     "vitest": "^0.32.2"
   },
