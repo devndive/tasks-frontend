@@ -1,0 +1,41 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "build": "remix build",
+    "dev": "remix dev",
+    "start": "remix-serve build",
+    "start:mocks": "",
+    "typecheck": "tsc",
+    "test": "vitest",
+    "test:e2e:run": "playwright test"
+  },
+  "dependencies": {
+    "@remix-run/css-bundle": "^1.17.1",
+    "@remix-run/node": "^1.17.1",
+    "@remix-run/react": "^1.17.1",
+    "@remix-run/serve": "^1.17.1",
+    "date-fns": "^2.30.0",
+    "isbot": "^3.6.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "@jackfranklin/test-data-bot": "^2.1.0",
+    "@playwright/test": "^1.35.1",
+    "@remix-run/dev": "^1.17.1",
+    "@remix-run/eslint-config": "^1.17.1",
+    "@types/react": "^18.0.35",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^4.0.1",
+    "eslint": "^8.38.0",
+    "jsdom": "^22.1.0",
+    "msw": "^1.2.2",
+    "typescript": "^5.0.4",
+    "vitest": "^0.32.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
