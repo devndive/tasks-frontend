@@ -3,13 +3,15 @@ FROM node:18-bullseye-slim as base
 
 ENV NODE_ENV=production
 
-RUN apt-get update && apt-get install -y ca-certificates
+RUN apt-get update && \
+    apt-get install -y ca-certificates && \
+    rm -rf /var/lib/apt/lists/*
 
 # Install dependencies
 FROM base as deps
 WORKDIR /app
 
-ADD package.json package-lock.json ./
+COPY package.json package-lock.json ./
 RUN npm install --include=dev
 
 # Setup production node_modules
@@ -17,7 +19,7 @@ FROM base as production-deps
 WORKDIR /app
 
 COPY --from=deps /app/node_modules /app/node_modules
-ADD package.json package-lock.json ./
+COPY package.json package-lock.json ./
 RUN npm prune --omit=dev
 
 # Build application
@@ -25,7 +27,7 @@ FROM base as build
 WORKDIR /app
 
 COPY --from=deps /app/node_modules /app/node_modules
-ADD . .
+COPY . .
 RUN npm run build
 
 # Final image
@@ -42,7 +44,7 @@ COPY --from=build /app/build /app/build
 COPY --from=build /app/public /app/public
 COPY --from=build /app/package.json /app/package.json
 
-ADD . .
+COPY . .
 
 RUN chown -R node /app
 USER node

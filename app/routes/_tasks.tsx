@@ -49,7 +49,7 @@ export default function Index() {
             </div>
           </div>
         </nav>
-        <header className="py-10 flex items-center justify-between px-8">
+        <header className="py-10 flex items-center justify-between px-8 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="">
             <div className="min-w-0 flex-1">
               <h2 className="text-2xl font-bold leading-7 sm:truncate sm:text-3xl sm:tracking-tight text-white ">
